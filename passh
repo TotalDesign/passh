@@ -24,5 +24,5 @@ fi
 
 #sshline="ssh $login:$passw@$url"
 
-sshline="sshpass -p$passw ssh $login@$url"
+sshline="sshpass -p$passw ssh -oStrictHostKeyChecking=no $login@$url"
 $sshline
