@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Copyright (C) 2014 Marc Blumenfrucht and Anne Jan Brouwer
+# All Rights Reserved.
+# This file is licensed under the GPLv2+. Please see COPYING for more information.
 
 if [[ -z $1 ]]
 then
@@ -26,3 +29,9 @@ fi
 
 sshline="sshpass -p$passw ssh -oStrictHostKeyChecking=no $login@$url"
 $sshline
+exitcode=$?
+if [[ $exitcode -ne 0 ]]
+then 
+	echo 'could not log in'
+	exit $exitcode
+fi
