@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+
+
 if [[ -z $1 ]]
 then
 	echo 'you need a password file'
@@ -14,6 +16,13 @@ url=`echo "$passresults" | grep 'url:' | sed '1q;d'`
 login=${login//login: /}
 url=${url//url: /}
 
+if [[ -z $login || -z $passw || -z $url ]]
+then
+	echo 'no complete credentials found'
+	exit 1
+fi
+
 #sshline="ssh $login:$passw@$url"
+
 sshline="sshpass -p$passw ssh $login@$url"
 $sshline
