@@ -28,5 +28,7 @@ Password files should be in the following format
 
 
 $password
+
 login: $user
+
 url: $url
