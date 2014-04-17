@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+if [[ -z $1 ]]
+then
+	echo 'you need a password file'
+	exit 1
+fi
+
+passresults=`pass $1`
+
+passw=`echo "$passresults" | sed '1q;d'`
+login=`echo "$passresults" | grep 'login:' | sed '1q;d'`
+url=`echo "$passresults" | grep 'url:' | sed '1q;d'`
+
+login=${login//login: /}
+url=${url//url: /}
+
+#sshline="ssh $login:$passw@$url"
+sshline="sshpass -p$passw ssh $login@$url"
+$sshline
