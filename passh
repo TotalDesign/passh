@@ -25,10 +25,8 @@ then
 	exit 1
 fi
 
-#sshline="ssh $login:$passw@$url"
-
-sshline="sshpass -p$passw ssh -oStrictHostKeyChecking=no $login@$url"
-$sshline
+sshline="sshpass -p'$passw' ssh -oStrictHostKeyChecking=no $login@$url"
+eval $sshline
 exitcode=$?
 if [[ $exitcode -ne 0 ]]
 then 
