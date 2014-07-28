@@ -10,7 +10,7 @@ Requirements:
 
 Instructions:
 
-Copy the passh binary to /usr/bin/ or similar 
+Copy the passh executable to /usr/bin/ or similar 
 
 Copy the bash completion file password-store-ssh to /usr/share/bash-completion/completions/ or similar
 
