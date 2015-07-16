@@ -24,13 +24,11 @@ For osx install https://raw.github.com/eugeneoden/homebrew/eca9de1/Library/Formu
 
 Note:
 
-Password files should be in the following format
+Password files should be in the following format:
 
-
-$password
-
+```$password
 login: $user
-
 url: $url
+```
 
 ![Sean Connery](https://annejan.com/media/passh.jpg)
